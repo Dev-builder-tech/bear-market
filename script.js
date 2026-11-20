@@ -1,5 +1,5 @@
-// Add the verified Solana address here after the token is deployed.
-const CONTRACT_ADDRESS = '';
+// Official BMC contract address supplied by the project owner.
+const CONTRACT_ADDRESS = '2DYwGk1CJo4ae4pYKnhUuGjqWzKxAwxc6rG3oPKWpump';
 const input = document.querySelector('#contract-address');
 const copyButton = document.querySelector('#copy-address');
 const note = document.querySelector('#contract-note');
@@ -9,15 +9,18 @@ if (CONTRACT_ADDRESS) {
   copyButton.textContent = 'Copy address';
   document.querySelector('.contract-top > span').textContent = 'OFFICIAL ADDRESS';
   note.textContent = 'Always verify the full contract address before interacting with a token.';
-  copyButton.addEventListener('click', async () => {
+  const copyAddress = async () => {
     try {
       await navigator.clipboard.writeText(CONTRACT_ADDRESS);
       note.textContent = 'Contract address copied.';
+      copyButton.textContent = 'Copied!';
     } catch {
       input.focus(); input.select();
       note.textContent = 'Select and copy the address manually.';
     }
-  });
+  };
+  copyButton.addEventListener('click', copyAddress);
+  input.addEventListener('click', copyAddress);
 }
 document.querySelector('#year').textContent = new Date().getFullYear();
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
