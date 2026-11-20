@@ -12,7 +12,7 @@ Import `Dev-builder-tech/bear-market` into Vercel. Select **Other** as the frame
 
 ## Launch updates
 
-The contract address is intentionally empty. Set `CONTRACT_ADDRESS` in `script.js` to the verified Solana address after deployment; this enables the copy button. Update the pre-launch text in `index.html`, including the hero status, token details, launch section, FAQ, and metadata when launch details are confirmed. Add verified social links and tokenomics only when available.
+BMC is marked as launched. The official address is set in `script.js` and the initial contract field in `index.html`; keep both values in sync if it changes. Clicking the field, pressing Enter or Space while it is focused, or using Copy address copies the full address. Clipboard failures fall back to selecting the address for manual copying. Add verified social links and tokenomics only when available.
 
 ## Assets and fonts
 
